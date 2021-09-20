@@ -27,7 +27,9 @@
     <title>React App</title>
   </head>
   <body>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +41,67 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+<h2>next</h2>
+
+        <div id="root1"></div>
+
+
+                <p id="ball"></p>
+
+        <script type="text/javascript">
+                  hi=function(){return "hiyaa.."}
+                document.getElementById("arrow").innerHTML=hi();
+
+                apple=function(){
+                  return 'i like apple';
+                }
+                document.getElementById("apple").innerHTML=apple();
+                ball=()=> "i olleyba.."
+                document.getElementById("ball").innerHTML=ball();
+
+        </script>
+
+
+<script>
+class Car {
+  constructor(name) {
+    this.brand = name;
+    this.price=" DSA"
+  }
+  present(){return "I study"+this.price;}
+}
+
+class Model extends Car {
+  constructor(name, mod) {
+    super(name);
+    this.model = mod;
+  }  
+  show() {
+    return this.present() + ', it is important' + this.model
+  }
+}
+
+mycar = new Car(" Binary ");
+mycar=new Model(" Heaps"," and effective ");
+document.write(mycar.show());
+document.write("--------");
+
+
+document.write(mycar.brand+"  ");
+document.write(mycar.price);
+document.write(mycar.present());
+
+</script>
+        <header id="sandy"></header>
+
+
+<div id="rot"></div>
+
+<div id="table"></div>
+<div id="jx"></div>
+<div id="tt"></div>
+
+
+
   </body>
 </html>
