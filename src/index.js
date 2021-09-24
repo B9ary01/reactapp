@@ -9,6 +9,9 @@ import TodoForm from './components/TodoForm';
 import reportWebVitals from './reportWebVitals';
 import { IconName } from "react-icons/ti";
 
+import Play from './Play';
+
+
 
 //import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
@@ -55,6 +58,8 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 };
 
 export default Todo;
+ReactDOM.render(<Play />,document.getElementById('plays'));
+
 
 
 const myelement=<h1>END GAME</h1>
@@ -95,6 +100,8 @@ ReactDOM.render(
 
 
 ReactDOM.render(myelement, document.getElementById('root1'));
+
+ReactDOM.render(<Play />,document.getElementById('plays'));
 
 
 
