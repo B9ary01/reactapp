@@ -63,26 +63,11 @@ ReactDOM.render(<Play />,document.getElementById('plays'));
 
 
 
-const myelement=<h1>END GAME</h1>
 
-const myelement8 = <h1>I Love JSX! and it {9+8} times better to code</h1>;
 
 const mynum = <input type="number" />;
 
 
-const myelement1 = (
-  <table>
-    <tr>
-      <th>Name</th>
-    </tr>
-    <tr>
-      <td>Dimash</td>
-    </tr>
-    <tr>
-      <td>naren</td>
-    </tr>
-  </table>
-);
 
 const mytable = (
   <ul>
@@ -100,7 +85,6 @@ ReactDOM.render(
 );
 
 
-ReactDOM.render(myelement, document.getElementById('root1'));
 
 ReactDOM.render(<Play />,document.getElementById('plays'));
 

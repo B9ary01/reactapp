@@ -2,12 +2,9 @@
   text-align: center;
   height: 100vh;
   background: lightblue;
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -50,6 +47,7 @@
   border-radius: 30px;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 
@@ -58,8 +56,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 129px;
-    padding-top: 66px;
+    margin: 209px;
+    padding: 66px;
 
 }
 
@@ -67,6 +65,5 @@
   color: red;
   font-size: 50px;
 }
-
 
 

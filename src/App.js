@@ -9,7 +9,6 @@ import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
 
 
-
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
@@ -64,13 +63,15 @@ function App() {
     name:"Anil",
     address:"4 broad way",
   }
-
   ];
 
   return (
 
     <div className="App">
-          <div className="ui container">
+      <div className="ui container">
+       < Header/>
+            < AddContact/>
+            <ContactList contacts={contacts} />
 
       <Typography style={{ padding: 44 }} variant="h1">
         React Todo
@@ -81,12 +82,7 @@ function App() {
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
       />
-
-
-            < Header/>
-
-            < AddContact/>
-            <ContactList contacts={contacts} />
+           
 
       </div>
  </div>

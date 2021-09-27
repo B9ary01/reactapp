@@ -7,7 +7,7 @@ function Singer(props){
 
 <h3>{props.name}</h3>
 <p>{props.info}</p>
-<h4>employees</h4>
+<h4>6 Octave Singer</h4>
 
 
 	</div>
