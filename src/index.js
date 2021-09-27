@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import { IconName } from "react-icons/ti";
 
 import Play from './Play';
+import 'semantic-ui-css/semantic.min.css';
 
 
 

@@ -4,9 +4,16 @@ import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
+import Header from "./components/Header";
+import AddContact from "./components/AddContact";
+import ContactList from "./components/ContactList";
+
+
+
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
+
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -45,9 +52,27 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   }
 
+  //contact list
+  const contacts=[
+  {
+    id:"1",
+    name:"Dimash",
+    address:"3 hill way",
+  },
+  {
+    id:"2",
+    name:"Anil",
+    address:"4 broad way",
+  }
+
+  ];
+
   return (
+
     <div className="App">
-      <Typography style={{ padding: 16 }} variant="h1">
+          <div className="ui container">
+
+      <Typography style={{ padding: 44 }} variant="h1">
         React Todo
       </Typography>
       <TodoForm addTodo={addTodo} />
@@ -56,7 +81,16 @@ function App() {
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
       />
-    </div>
+
+
+            < Header/>
+
+            < AddContact/>
+            <ContactList contacts={contacts} />
+
+      </div>
+ </div>
+    
   );
 }
 
