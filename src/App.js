@@ -15,6 +15,13 @@ function App() {
 
   const [todos, setTodos] = useState([]);
 
+  //contact state
+  const[contacts, setContacts]=useState([]);
+  //handler
+  const addContactHandler=(contact)=>{
+    console.log(contact);
+  }
+
   useEffect(() => {
     // fires when app component mounts to the DOM
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -52,6 +59,7 @@ function App() {
   }
 
   //contact list
+  /*
   const contacts=[
   {
     id:"1",
@@ -64,13 +72,14 @@ function App() {
     address:"4 broad way",
   }
   ];
+  */
 
   return (
 
     <div className="App">
       <div className="ui container">
        < Header/>
-            < AddContact/>
+            < AddContact addContactHandler={addContactHandler}/>
             <ContactList contacts={contacts} />
 
       <Typography style={{ padding: 44 }} variant="h1">

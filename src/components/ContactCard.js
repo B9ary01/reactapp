@@ -14,7 +14,8 @@ const ContactCard=(props)=>{
         <div>{address}</div>
         </div>
         <i className="trash alternate outline icon"
-        style={{color:"red",marginTop:"7px"}}></i>
+        style={{color:"red"}}></i>
+        
         </div>
 
   	);
