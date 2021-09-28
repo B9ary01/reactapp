@@ -1,8 +1,12 @@
 import Typography from "@material-ui/core/Typography";
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+
+
 
 import Header from "./components/Header";
 import AddContact from "./components/AddContact";
@@ -33,8 +37,6 @@ function App() {
   }
 
 
-
-
   //retrieve data
 
   useEffect(()=>{
@@ -60,6 +62,7 @@ function App() {
     // fires when todos array gets updated
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
+
 
   function addTodo(todo) {
     // adds new todo to beginning of todos array
@@ -98,18 +101,13 @@ function App() {
     address:"4 broad way",
   }
   ];
-  */
 
-  return (
+  <ContactList contacts={contacts} getContactId={removeContactHandler}/>
 
-    <div className="App">
-      <div className="ui container">
-       < Header/>
-            < AddContact addContactHandler={addContactHandler}/>
-            <ContactList contacts={contacts} getContactId={removeContactHandler}/>
+        < AddContact addContactHandler={addContactHandler}/>  
 
-      <Typography style={{ padding: 44 }} variant="h1">
-        React Todo
+<Typography style={{ padding: 44 }} variant="h1">
+        React 
       </Typography>
       <TodoForm addTodo={addTodo} />
       <TodoList
@@ -117,9 +115,24 @@ function App() {
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
       />
-           
+  */
 
-      </div>
+  return (
+      <div className="ui container">
+
+   // <div className="App">
+      <Router>
+       < Header/>
+       <Switch>
+       <Route path="/" exact component={ContactList}/>
+       <Route path="/add" component={AddContact} />
+       </Switch>
+        
+
+                    </Router>
+ 
+
+    //  </div>
  </div>
     
   );

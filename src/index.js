@@ -59,9 +59,13 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 };
 
 export default Todo;
-ReactDOM.render(<Play />,document.getElementById('plays'));
+
+//ReactDOM.render(<Play />,document.getElementById('plays'));
 
 
+
+
+//ReactDOM.render(<Play />,document.getElementById('plays'));
 
 
 
@@ -84,9 +88,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-
-ReactDOM.render(<Play />,document.getElementById('plays'));
 
 
 
