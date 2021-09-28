@@ -8,10 +8,12 @@ import Header from "./components/Header";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
 
+import {uuid} from 'uuidv4';
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
+  const LOCAL_STORAGE_KEY1="contacts";
 
   const [todos, setTodos] = useState([]);
 
@@ -20,9 +22,31 @@ function App() {
   //handler
   const addContactHandler=(contact)=>{
     console.log(contact);
+    setContacts([...contacts,{id:uuid(), ...contact}]);
   }
 
+  const removeContactHandler=(id)=>{
+    const newContactList=contacts.filter((contact)=>{
+      return contact.id !==id;
+    });
+    setContacts(newContactList);
+  }
+
+
+  //retrieve data
+
+  useEffect(()=>{
+    const retrieveContacts=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY1));
+  if(retrieveContacts) setContacts(retrieveContacts);
+}, []);
+
+  useEffect(()=>{
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(contacts));
+  }, [contacts]);
+
+
   useEffect(() => {
+
     // fires when app component mounts to the DOM
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storageTodos) {
@@ -80,7 +104,7 @@ function App() {
       <div className="ui container">
        < Header/>
             < AddContact addContactHandler={addContactHandler}/>
-            <ContactList contacts={contacts} />
+            <ContactList contacts={contacts} getContactId={removeContactHandler}/>
 
       <Typography style={{ padding: 44 }} variant="h1">
         React Todo
